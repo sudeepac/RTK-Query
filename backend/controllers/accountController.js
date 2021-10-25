@@ -73,9 +73,9 @@ export const deleteAccount = asyncHandler(async (req, res) => {
 
   if (account) {
     await account.remove();
-    res.json({ message: "Product removed successfully." });
+    res.json({ message: "Account removed successfully." });
   } else {
     res.status(404);
-    throw new Error("Product not found");
+    throw new Error("Account not found");
   }
 });

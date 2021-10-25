@@ -1,10 +1,12 @@
 import express from "express";
+import cors from "cors";
 import dotenv from "dotenv";
 import morgan from "morgan";
 import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
 import { connectDB } from "./config/db.js";
 
 import accountRoutes from "./routes/accountRoutes.js";
+import contactRoutes from "./routes/contactRoutes.js";
 
 dotenv.config();
 connectDB();
@@ -14,9 +16,11 @@ if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
 
+app.use(cors());
 app.use(express.json());
 
 app.use("/api/accounts", accountRoutes);
+app.use("/api/contacts", contactRoutes);
 app.get("/", (req, res) => {
   res.send("API is running");
 });
