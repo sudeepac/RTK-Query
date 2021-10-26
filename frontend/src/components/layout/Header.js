@@ -17,6 +17,11 @@ export const Header = () => {
             </Link>
           </li>
           <li className="navbar-item">
+            <Link to="/contacts" className="nav-link">
+              Contacts
+            </Link>
+          </li>
+          <li className="navbar-item">
             <Link to="/contacts/create" className="nav-link">
               Create Contact
             </Link>

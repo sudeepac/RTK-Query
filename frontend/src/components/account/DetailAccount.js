@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { useRouteMatch } from "react-router-dom";
+
 import { getAccount } from "../../api.js";
 
-export const DetailAccount = () => {
-  const match = useRouteMatch();
-
+export const DetailAccount = ({ match }) => {
   const [account, setAccount] = useState();
 
   useEffect(() => {

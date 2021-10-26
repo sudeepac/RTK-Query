@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { useRouteMatch } from "react-router-dom";
+
 import { deleteAccount } from "../../api.js";
 
-export const DeleteAccount = () => {
-  const match = useRouteMatch();
-
+export const DeleteAccount = ({ match }) => {
   const [status, setAccount] = useState();
 
   useEffect(() => {

@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { AccountForm } from "../account/AccountForm";
-import { useRouteMatch, useHistory } from "react-router-dom";
 import { getAccount, updateAccount } from "../../api.js";
 
-export const EditAccount = () => {
-  const match = useRouteMatch();
+export const EditAccount = ({ match, history }) => {
   const [account, setAccount] = useState();
-  const history = useHistory();
 
   useEffect(() => {
     const fetchAccount = async () => {
