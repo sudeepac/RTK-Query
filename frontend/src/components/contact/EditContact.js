@@ -4,7 +4,7 @@ import { ContactForm } from "../contact/ContactForm";
 import {
   useGetContactQuery,
   useUpdateContactMutation,
-} from "../services/apiSlice";
+} from "../services/contactSlice";
 
 export const EditContact = ({ match, history }) => {
   const { data: contact } = useGetContactQuery(match.params.id);

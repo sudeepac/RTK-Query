@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useGetContactsQuery } from "../services/apiSlice";
+import { useGetContactsQuery } from "../services/contactSlice";
 
 export const ListContact = () => {
   const {

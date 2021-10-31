@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 
-import { useDeleteContactMutation } from "../services/apiSlice";
+import { useDeleteContactMutation } from "../services/contactSlice";
 
 export const DeleteContact = ({ match }) => {
   const [deleteContact, { isLoading: isDeleting, isSuccess }] =

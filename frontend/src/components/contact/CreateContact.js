@@ -1,6 +1,6 @@
 import React from "react";
 import { ContactForm } from "../contact/ContactForm";
-import { useAddContactMutation } from "../services/apiSlice";
+import { useAddContactMutation } from "../services/contactSlice";
 
 export const CreateContact = ({ history }) => {
   const [addContact, { isLoading }] = useAddContactMutation();

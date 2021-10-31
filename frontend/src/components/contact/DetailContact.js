@@ -1,5 +1,5 @@
 import React from "react";
-import { useGetContactQuery } from "../services/apiSlice";
+import { useGetContactQuery } from "../services/contactSlice";
 
 export const DetailContact = ({ match }) => {
   const {
