@@ -1,7 +1,12 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
+import { PrivateRoute } from "../src/utils/PrivateRoute";
+
 import { Header } from "./components/layout/Header";
+
+import { Homepage } from "./components/homepage/Homepage";
+import { Login } from "./components/homepage/Login";
 
 import { ListAccount } from "./components/account/ListAccount";
 import { CreateAccount } from "./components/account/CreateAccount";
@@ -25,17 +30,20 @@ function App() {
       <BrowserRouter>
         <Header />
         <Switch>
+          <Route exact path="/" component={Homepage} />
+          <Route exact path="/login" component={Login} />
+
           <Route exact path="/accounts" component={ListAccount} />
           <Route path="/accounts/create" component={CreateAccount} />
           <Route path="/accounts/view/:id" component={DetailAccount} />
           <Route path="/accounts/edit/:id" component={EditAccount} />
           <Route path="/accounts/delete/:id" component={DeleteAccount} />
 
-          <Route exact path="/contacts" component={ListContact} />
-          <Route path="/contacts/create" component={CreateContact} />
-          <Route path="/contacts/view/:id" component={DetailContact} />
-          <Route path="/contacts/edit/:id" component={EditContact} />
-          <Route path="/contacts/delete/:id" component={DeleteContact} />
+          <PrivateRoute exact path="/contacts" component={ListContact} />
+          <PrivateRoute path="/contacts/create" component={CreateContact} />
+          <PrivateRoute path="/contacts/view/:id" component={DetailContact} />
+          <PrivateRoute path="/contacts/edit/:id" component={EditContact} />
+          <PrivateRoute path="/contacts/delete/:id" component={DeleteContact} />
         </Switch>
         <Footer />
       </BrowserRouter>
