@@ -12,6 +12,7 @@ export const Header = () => {
 
   const dispatch = useDispatch();
   const history = useHistory();
+
   const logOutHanlder = () => {
     dispatch(removeCredentials());
     history.push("/");
@@ -44,6 +45,26 @@ export const Header = () => {
           <li className="navbar-item">
             <Link to="/contacts/create" className="nav-link">
               Create Contact
+            </Link>
+          </li>
+          <li className="navbar-item">
+            <Link to="/leads" className="nav-link">
+              Leads
+            </Link>
+          </li>
+          <li className="navbar-item">
+            <Link to="/leads/create" className="nav-link">
+              Create Lead
+            </Link>
+          </li>
+          <li className="navbar-item">
+            <Link to="/deals" className="nav-link">
+              Deals
+            </Link>
+          </li>
+          <li className="navbar-item">
+            <Link to="/deals/create" className="nav-link">
+              Create Deal
             </Link>
           </li>
         </ul>
